@@ -1,0 +1,12 @@
+
+<% if(results.length) { %>
+<% results.forEach((proj)=>{ %>
+  <div class="proj-container">
+  <p> Title: <%= proj.project_title %></p>
+  <p> Description: <%= proj.project_description %></p>
+  <p> Start-Date:<%= new Date(proj.project_start_dt).toLocaleDateString() %></p>
+  <p> Due-Date: <%= new Date(proj.project_due_dt).toLocaleDateString() %></p>
+  <a class="button more" href="projects/more/<%= proj.id %>"> More</a>
+  </div>
+  <% }) %>
+<% } %>

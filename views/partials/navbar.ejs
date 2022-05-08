@@ -1,0 +1,167 @@
+<style>
+  .nav-container{
+    background-color: transparent;
+    width: 100%;
+    border-bottom: 0.1px solid lightgray;
+    margin-bottom: 50px;
+    padding: 5px 0px;
+  }
+
+  .nav-container ul {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0rem;
+    height: 50px;
+    
+  }
+
+  .nav-container li {
+    list-style-type: none;
+  }
+
+  .nav-container li a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Mukta , sans-serif;
+    transition: all ease 300ms 0s;
+    border-bottom: 1px solid transparent;
+    border-radius: 5px;
+  }
+
+  ol li{
+    display: inline-flex;
+    margin-left: 25px;
+  }
+
+  .search{
+    display: flex;
+    width: 280px;
+    height: 30px;
+    padding: 10px;
+    gap: 12px;
+    align-items: center;
+    border: 0.1px solid lightgray;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  #searchbar{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: Mukta , sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+  }
+
+  .fa-sticky-note-o{
+    color: #333;
+    font-size: 15px;
+    font-weight: 100;
+  }
+
+  .fa-sticky-note-o.light{
+    color: aliceblue;
+    text-shadow: 1px 1px 1px #333;
+  }
+
+  .logo-text{
+    font-size: 36px;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 100;
+    letter-spacing: 0px;
+    text-transform:uppercase;
+    display: inline-block;
+    line-height: 1.8;
+  }
+
+  .logo-text.one{
+    background-image: linear-gradient(60deg,skyblue,black,#333);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .logo-text.two{
+    background-image: linear-gradient(60deg,#333,aliceblue,skyblue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0.1px 0.1px 0px rgba(51, 51, 51, 0.144);
+  }
+
+  .fa-search{
+    color: #333;
+  }
+
+  .login-container{
+    display: flex;
+    gap: 1.5rem;
+    padding-left: 50px;
+  }
+
+  .sign-in,.login{
+    width: 85px;
+    outline: none;
+    background-color: transparent;
+    border: 0.1px solid skyblue;
+    font-family: Mukta , sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 300ms ease 0ms;
+  }
+
+  .sign-in{
+    background-color: skyblue;
+    color: white;
+  }
+
+  .sign-in:hover,.login:hover{
+   border-color: lightslategray;
+  }
+
+  ol li a:hover{
+    border-bottom: 1px solid lightslategray;
+  }
+
+
+</style>
+
+<div class="nav-container">
+  <nav>
+    <ul>
+      <li class="logo-container">
+         <a class="logo" href="/">
+          <i class="fa fa-sticky-note-o light" aria-hidden="true"></i>
+          <p class="logo-text one">proj</p>
+          <p class="logo-text two">notes</p>
+          <i class="fa fa-sticky-note-o " aria-hidden="true"></i>
+         </a>
+      </li>
+
+      <li class="search-container">
+        <div class="search">
+          <div class="searchIcon"> <i class="fa fa-search" aria-hidden="true"></i></div>
+          <input type="text" id="searchbar" placeholder="Search">
+        </div>
+      </li>
+
+      <li class="links-container">
+        <ol>
+        <li><a href="/projects">Show Projects</a></li>
+        <li><a href="/uploads">Upload Project</a></li>
+        </ol>
+      </li>
+
+      <li class="login-container">
+       <button class="sign-in">Sign-In</button>
+       <button class="login">Login</button>
+      </li>
+    </ul>
+  </nav>
+</div>

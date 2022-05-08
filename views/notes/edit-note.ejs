@@ -1,0 +1,99 @@
+<style>
+  body{
+    background-color: whitesmoke;
+  }
+  form{
+    width: 500px;
+    margin: 40px auto;
+    border: 1px solid lightgray;
+    padding: 30px 50px;
+    background-color: white;
+  }
+
+  .form-control{
+    display: flex;
+    width: 100%;
+    flex-direction:column;
+    margin: 20px 0px;
+  }
+
+  .form-control label{
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    margin-bottom: 8px;
+  }
+
+  .form-control input{
+    display: block;
+    width: 50%;
+    outline: none;
+    border: 0.1px solid lightgray;
+    height: 25px;
+    border-radius: 3px;
+  }
+
+  .btn-container{
+    margin-top: 20px;
+    text-align: right;
+  }
+
+  .btn-container button{
+    width: 100px;
+    height: 40px;
+    outline: none;
+    background-color: dodgerblue;
+    border: 0.1px solid gray;
+    font-size: 18px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.233);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: all 300ms ease 0s;
+    cursor: pointer;
+  }
+
+  .divider{
+    width: 100%;
+    margin: 0px auto;
+    outline: none;
+    border: none;
+    height: 1px;
+    background-image: linear-gradient(60deg, dodgerblue,rgba(0, 0, 0, 0.295),ivory);
+  }
+
+  .btn-container:hover button{
+    transform: translateY(-7px);
+  }
+    #active_date{
+      width: 100%;
+    }
+  
+</style>
+
+
+<div class="form-container">
+  <form action="/update" method="post">
+    <div class="form-control">
+      <label for="note_info">Note Information</label>
+      <input type="text"  id="note_info" name="note_info" value="<%= edit.note %>">
+    </div>
+
+    <div class="form-control">
+      <label for="active_date">Active Date</label>
+      <input type="datetime" id="active_date" name="active_date" value="<%= edit.active_date %>">
+    </div>
+
+    <div class="form-control">
+      <input type="hidden" name="project_id" id="project_id" value="<%= edit.project_id %>">
+    </div>
+
+    <hr class="divider">
+
+    <div class="btn-container">
+      <button type="submit">Submit</button>
+      
+    </div>
+  </form>
+</div>
+
+

@@ -1,0 +1,22 @@
+<h3>This is the notes page </h3>
+
+<% if(notes.length) { %>
+<div style="margin: 20px;">
+<p> Title: <%= notes[0].project_title %></p>
+<p> Description: <%= notes[0].project_description %></p>
+<p> Start-Date:<%= new Date(notes[0].project_start_dt).toLocaleDateString() %></p>
+<p> Due-Date: <%= new Date(notes[0].project_due_dt).toLocaleDateString() %></p>
+
+<%notes.forEach((item) => { %>
+  
+    <div class="note-section">
+      <p>Notes:- <%= item.note %></p>
+      <a class="button" href="/notes/edit/<%= item.id %>"> Edit</a>
+    </div>
+    
+  <% }); %>
+
+
+</div>
+ 
+<%}%>
