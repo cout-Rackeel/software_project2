@@ -23,3 +23,98 @@
   border: 5px solid transparent;
   transition: all 300ms ease 0s;
 }
+
+
+/* Project-more section */
+
+.display{
+  display: grid;
+  grid-template-columns: 1fr  0.5fr;
+}
+
+.more-section{
+  position:relative;
+}
+
+
+p{
+  font-family: Mukta, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.fixed{
+  position: fixed;
+  background-color: white;
+  padding: 30px;
+  margin: 0px 20px;
+  height: fit-content;
+  width: 62%;
+  
+}
+
+.fixed > * {
+  margin: 10px 0px;
+}
+
+.notes-sect{
+  border-left:0.1px solid lightslategray;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 200vh;
+}
+
+.note-cont{
+  border: 1px solid lightblue;
+  width: 80%;
+  margin: 10px 10px 20px 20px;
+  padding: 5px 0px;
+  border-radius: 2px;
+}
+
+.note{
+  margin: 10px;
+}
+
+.button.edit{
+  background-color: lightblue;
+  color: white;
+  border-radius: 3px;
+  border-color: lightblue;
+  transition: all 300ms ease 0s;
+}
+
+.button.delete{
+  background-color: #ff6768;
+  color: white;
+  border-radius: 3px;
+  border-color: #ff6768;
+  transition: all 300ms ease 0s;
+}
+
+.button.delete:hover{
+  background-color: crimson;
+  border-color: crimson;
+}
+
+.button.edit:hover{
+  background-color: skyblue;
+  border-color: skyblue;
+}
+
+.btn-cont{
+  margin: 10px 0px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.message p{
+  position: absolute;
+  top: -50px;
+  right: 0px;
+  font-size: 16px;
+}

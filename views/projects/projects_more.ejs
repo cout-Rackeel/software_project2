@@ -1,27 +1,49 @@
 
-
+<div class="display">
 <% if(notes.length) { %>
-<div style="margin: 20px;">
+<div class="more-section">
+  <div class="message">
+    <% if (messages.error) { %>
+      <p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+       <p style="color: green;"><%- messages.success %></p>
+<% } %>
+  </div>
+<div class="fixed">
 <p class="proj-title"> Title: <%= notes[0].project_title %></p>
 <p class="proj-desc"> Description: <%= notes[0].project_description %></p>
 <p class="proj-date start"> Start-Date:<%= new Date(notes[0].project_start_dt).toLocaleDateString() %></p>
 <p class="proj-date due"> Due-Date: <%= new Date(notes[0].project_due_dt).toLocaleDateString() %></p>
+  </div>
+</div>
 
-<%notes.forEach((item) => { %>
+
+<div class="notes-sect">
+  <div style="margin:5px">
+    <a href="/notes/notes-form/<%= notes[0].project_id %>" class="button">ADD NOTE</a>
+  </div>
+  <%notes.forEach((item) => { %>
   
-    <div class="note-section">
+    <div class="note-cont">
       <p class="note">Notes:- <%= item.note %></p>
-      <a class="button" href="/notes/edit/<%= item.id %>"> Edit</a>
+
+      <div class="btn-cont">
+        <a class="button edit" href="/notes/edit/<%= item.id %>"> Edit</a>
+        <a class="button delete" href="/notes/delete/<%= item.id %>"> Delete</a>
+      </div>
     </div>
-    
   <% }); %>
 
-  <a href="/notes/notes-form/<%= notes[0].project_id %>" class="button">ADD NOTE</a>
-</div>
  
-<%}else {%>
-
-  <h3>There are no notes</h3>
-  <a href="/notes/notes-form/<%= params %>" class="button">ADD NOTE</a>
+<%}else{%>
+  <div class="no-notes">
+    <h3 class="title">There are no notes</h3>
+    <a href="/notes/notes-form/<%= params %>" class="button">ADD NOTE</a>
+  </div>
 
   <%}%>
+</div>
+
+</div>

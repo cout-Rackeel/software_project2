@@ -1,4 +1,15 @@
 
+    <div class="message">
+      <% if (messages.error) { %>
+        <p style="color:red"><%- messages.error %></p>
+  <% } %>
+  
+  <% if (messages.success) { %>
+         <p class="alert alert-success mt-4"><%- messages.success %></p>
+  <% } %>
+    </div>
+
+
 <% if(results.length) { %>
 <% results.forEach((proj)=>{ %>
   <div class="proj-container">

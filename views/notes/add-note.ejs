@@ -42,7 +42,7 @@
     width: 100px;
     height: 40px;
     outline: none;
-    background-color: dodgerblue;
+    background-color: #87CEEB;
     border: 0.1px solid gray;
     font-size: 18px;
     border-radius: 3px;
@@ -72,7 +72,7 @@
 
 
 <div class="form-container">
-  <form action="notes/added" method="post">
+  <form action="/notes/add" method="post">
     <div class="form-control">
       <label for="note_info">Note Information</label>
       <input type="text"  id="note_info" name="note_info" >
@@ -80,7 +80,7 @@
 
     <div class="form-control">
       <label for="active_date">Active Date</label>
-      <input type="datetime-local" id="active_date" name="active_date" >
+      <input type="datetime" id="active_date" name="active_date" >
     </div>
 
 
