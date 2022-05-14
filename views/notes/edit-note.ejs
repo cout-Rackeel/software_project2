@@ -72,7 +72,7 @@
 
 
 <div class="form-container">
-  <form action="/notes/update" method="post">
+  <form action="/notes/update/<%= edit.project_id %> " method="post">
     <div class="form-control">
       <label for="note_info">Note Information</label>
       <input type="text"  id="note_info" name="note_info" value="<%= edit.note %>">
@@ -83,9 +83,9 @@
       <input type="datetime" id="active_date" name="active_date" value=" <%= edit.active_date.toLocaleString('sv-SE') %>">
     </div>
 
-
+  
     <div class="form-control">
-      <input type="hidden" name="project_id" id="project_id" value="<%= edit.project_id %>">
+      <input type="hidden" name="project_id" id="project_id" value="<%= params %>">
     </div>
 
     <hr class="divider">

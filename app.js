@@ -33,7 +33,7 @@ app.set('layout', 'layouts/layout')
 app.use(expressLayout)
 
 
-
+// SETTING BODYPARSE
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -14,7 +14,7 @@ router.get('/edit/:id' , function(req,res,next){
       title : 'Proj Notes - Edit Notes',
       stylesheet : '/stylesheets/edit-note.css',
       edit : results[0],
-      dateT : new Date(results[0].active_date).toLocaleString()
+      params : req.params.id
     }
 
     res.render('notes/edit-note', locals)
@@ -43,7 +43,7 @@ router.get('/edit/:id' , function(req,res,next){
 
 // })
 
-router.post('/update', function(req, res, next) {
+router.post('/update/:id', function(req, res, next) {
   let sqlQuery = "UPDATE softwareProj.notes SET note ='" + req.body.note_info + 
                                       "', active_date ='" + req.body.active_date + 
                                       "' WHERE id = " + req.body.project_id;
@@ -55,10 +55,10 @@ router.post('/update', function(req, res, next) {
       }else{
     var locals ={
       title : 'proj',
-      stylesheet:'/stylesheets/projects.css'
+      stylesheet:'/stylesheets/projects.css',
     }
              req.flash('success', "Sucessfully updated"); 
-             res.redirect('/projects/more/'+ req.body.project_id)
+             res.redirect('/projects/more/'+ req.params.id)
            
   }
           });
